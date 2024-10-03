@@ -2,12 +2,12 @@ import React from 'react';
 import clsx from 'clsx';
 import { HiEye, HiEyeOff } from 'react-icons/hi';
 
-const InputField = ({ id, label, type, placeholder, value, onChange, showToggle, toggleVisibility }) => {
+
+const InputField = ({ id, label, type, placeholder, value, onChange, className, showToggle, toggleVisibility }) => {
     return (
 
-           <div className="flex-auto rounded-lg mb-5">
-            
-            <label className="block text-white text-sm mb-3" htmlFor={id}>
+           <div className="flex-auto rounded-lg mb-5"> 
+            <label className="block text-white text-sm mb-1" htmlFor={id}>
                 {label}
             </label>
             <div className="relative flex flex-col items-center justify-center">
@@ -18,10 +18,9 @@ const InputField = ({ id, label, type, placeholder, value, onChange, showToggle,
                     onChange={onChange}
                     placeholder={placeholder}
                     className={clsx(
-                        'w-full px-3 py-2 rounded-3xl bg-gray-700 text-white focus:outline-none transition duration-200',
-                     
+                        "w-full px-3 py-2 rounded-3xl text-white placeholder-gray-500 bg-gray-input bg-opacity-40 border border-gray-600"
                     )}
-                />
+                    />
                 {showToggle && (
                     <span
                         className="absolute inset-y-0 right-3 flex items-center text-gray-400 cursor-pointer"

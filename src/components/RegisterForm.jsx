@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import InputField from "./common/Input";
 import Logo from "./common/Chill";
 import Button from "./common/Button";
+import { FcGoogle } from "react-icons/fc";
 
 const RegisterForm = () => {
   const [username, setUsername] = useState("");
@@ -17,15 +18,15 @@ const RegisterForm = () => {
     <div
       className="min-h-screen w-screen bg-cover bg-center flex items-center justify-center bg-opacity-80"
       style={{
-        backgroundImage: "url('src/assets/teathrical.jpeg')",
+        backgroundImage: "url('src/assets/auditorium-2584269_1280.jpg')",
       }}
     >
-      <div className=" bg-gray-800 bg-opacity-85 p-8 mt-5 rounded-xl w-full max-w-md">
+      <div className=" bg-gray-input bg-opacity-90 p-8 mt-5 rounded-xl w-full max-w-md">
         <Logo src="src/assets/Logo (1).png" className="mb-4" />
-        <h2 className="text-2xl font-bold text-center text-white mb-1">
+        <h2 className="text-2xl font-medium text-center text-white mb-1">
           Daftar
         </h2>
-        <p className="text-center text-white mb-5 pb-5">Selamat datang!</p>
+        <p className="text-center text-white font-light mb-2 pb-5">Selamat datang!</p>
 
         <form>
           <InputField
@@ -59,17 +60,17 @@ const RegisterForm = () => {
             toggleVisibility={togglePasswordVisibility}
           />
 
-          <div className="flex text-sm text-gray-300 mb-4">
+          <div className="flex text-sm text-gray-400 mb-5">
             Sudah punya akun?
-            <Link to="/login" className="text-white font-bold ">
+            <Link to="/login" className="text-white">
               {" "}
               Masuk
             </Link>
           </div>
 
-          <Button text-white py-2 mt-4 rounded-3xl text="Daftar" />
-          <p className="text-sm text-center text-gray-500 mb-1 mt-1">Atau</p>
-          <Button text="Daftar dengan Google" type="secondary" />
+          <Button text="Daftar" className="bg-gray-600 hover:bg-white-secondary text-white" />
+          <p className="text-sm text-center text-gray-400 mb-1 mt-1">Atau</p>
+          <Button text="Daftar dengan Google" icon={<FcGoogle />} className="border border-gray-700 hover:bg-orange-700 text-white" />
         </form>
       </div>
     </div>

@@ -62,7 +62,6 @@
   font-style: italic;
 }
 
-
 a {
   font-weight: 500;
   color: #4f4f52;
@@ -77,13 +76,13 @@ a:hover {
   background-position: center;
 }
 *{
-  @apply font-sans; 
   font-family: 'Lato', sans-serif;
 }
 body {
+  height: 100%;
+  overflow-x: hidden;
   margin: 0 auto;
   display: block;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -96,14 +95,10 @@ h2 {
   place-items: center;
 }
 
-
 button {
-
   border: 1px solid transparent;
   font-weight: 400;
   font-family: inherit;
-
-  cursor: pointer;
   transition: border-color 0.25s;
 }
 
@@ -112,4 +107,21 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.premium-flag {
+  z-index: 50;
+}
+
+.hover-effect {
+  width: 408px;
+  height: 460px;
+  gap: 0;
+  border-radius: 20px 0px 0px 0px;
+  opacity: 0;
+  transition: opacity 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-effect:hover {
+  opacity: 1;
+  box-shadow: 0px 20px 48px 0px rgba(255, 255, 255, 0.1);
+}
 
