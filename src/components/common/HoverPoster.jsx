@@ -25,9 +25,9 @@ const HoverPoster = React.memo(
                 <option></option>
               </select>
 
-              {/* Add to Checklist Button */}
+            
 
-              {/* Play Button and Info Container */}
+              {/* Tombol Play dan Info Container */}
               <div className="p-6 flex">
          
           <div className="flex-1">
@@ -56,7 +56,7 @@ const HoverPoster = React.memo(
               </div>
             </div>
 
-            {/* Genre Container */}
+            {/* Genre */}
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-center">
               <p className="text-gray-500 font-thin">
                 {item.genre?.join(" • ") || "No Genre Available"}
