@@ -8,7 +8,7 @@ import Popup from "../components/common/Popup";
 import HoverPoster from "/src/components/common/HoverPoster";
 import Rating from "/src/components/common/Rating";
 
-const Series = (props) => {
+const MyList = (props) => {
   console.log("Series props:", props);
   const [isTrailerOpen, setIsTrailerOpen] = useState(false);
   const [currentTrailerUrl, setCurrentTrailerUrl] = useState("");
@@ -341,17 +341,17 @@ const Series = (props) => {
       <Navbar />
 
       <Hero
-        title="Happiness"
-        description="Berlatar waktu masa depan, sebuah gedung apartemen bertingkat tinggi baru saja dibangun di kota besar. Gedung apartemen tersebut memiliki penghuni dari berbagai latar belakang, tetapi sebuah penyakit menular baru merebak. Karena wabah tersebut, apartemen bertingkat tinggi tersebut ditutup. Para penghuni berjuang untuk bertahan hidup, sambil dilanda ketakutan dan ketidakpercayaan terhadap orang lain.
+        title="Avatar: The Way of Water"
+        description="Melanjutkan cerita konflik antara manusia dan Na'vi di planet Pandora. Dalam pertempuran untuk sumber daya dan kekuasaan, manusia dan sekutu Na'vi bersatu untuk melindungi tanah mereka. Film ini mengangkat tema persatuan dan perlawanan terhadap eksploitasi.
 "
         options={options}
         onDropdownChange={handleDropdownChange}
         showDropdown={true}
-        backgroundImage="src/assets/Rectangle 9 (1).png"
+        backgroundImage="src/assets/Rectangle 9 (2).png"
       />
 
       <Category
-        title="Melanjutkan Tonton Series"
+        title="Melanjutkan Tonton Film"
         items={continueWatching}
         onOpenTrailer={handleOpenTrailer}
         handleMouseEnter={handleMouseEnter}
@@ -361,21 +361,21 @@ const Series = (props) => {
       />
      
       <Category
-        title="Series Persembahan Chill"
+        title="Film Persembahan Chill"
         items={topRated}
         onOpenTrailer={handleOpenTrailer}
         handleMouseEnter={handleMouseEnter}
         handleMouseLeave={handleMouseLeave}
       />
       <Category
-        title="Top Rating Series Hari Ini"
+        title="Top Rating Film Hari Ini"
         items={topRated}
         onOpenTrailer={handleOpenTrailer}
         handleMouseEnter={handleMouseEnter}
         handleMouseLeave={handleMouseLeave}
       />
       <Category
-        title="Series Trending"
+        title="Film Trending"
         items={trendingMovies}
         onOpenTrailer={handleOpenTrailer}
         handleMouseEnter={handleMouseEnter}
@@ -413,4 +413,4 @@ const Series = (props) => {
   );
 };
 
-export default Series;
+export default MyList;

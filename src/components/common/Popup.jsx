@@ -2,8 +2,6 @@ import { MdOutlineVolumeOff, MdPlayCircleOutline } from "react-icons/md";
 import { PiPlusCircleLight } from "react-icons/pi";
 import { AiOutlineCheck } from "react-icons/ai";
 
-
-
 const Popup = ({ series, isOpen, onClose }) => {
   if (!isOpen) return null;
 
@@ -11,7 +9,7 @@ const Popup = ({ series, isOpen, onClose }) => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 z-50 overflow-auto">
-      <div className="bg-custom-gray text-white rounded-lg w-11/12 md:w-5/6 lg:w-4/5 max-h-[90vh] overflow-y-auto relative">
+      <div className="bg-gray-input text-white rounded-lg w-11/12 md:w-5/6 lg:w-4/5 max-h-[90vh] overflow-y-auto relative">
         {/* Gambar Poster */}
         <div className="relative w-full bg-cover bg-center h-auto">
           <img
@@ -28,27 +26,26 @@ const Popup = ({ series, isOpen, onClose }) => {
             Mulai
           </button>
 
-          {/* Add Icon */}
+          {/* Icon plus */}
           <PiPlusCircleLight
             style={{ position: "absolute", bottom: "36px", left: "150px" }}
             size="40px"
           />
-          {/*Title */}
+          {/*Judul */}
           <div className="absolute bottom-20 left-5 p-4 flex items-center">
             <h2 className="text-2xl font-medium">{series.title}</h2>
           </div>
 
-          {/* Sound Icon */}
+          {/* Icon suara */}
           <button className="bg-transparent absolute bottom-10 right-10 border-gray-500 rounded-full px-2 py-2">
             <MdOutlineVolumeOff size={25} />
           </button>
         </div>
 
-        {/* Series Info */}
+        {/* Info */}
         <div className="p-6 flex">
-          {/* Left Section: Year, Episodes, Age, and Description */}
+          {/* Deskripsi sebelah kiri */}
           <div className="flex-1">
-            {/* Year, Total Episodes, and Age Rating */}
             <div className="flex items-center space-x-4 mb-4">
               <span>{series.date}</span>
               <span>{series.totalEpisodes}</span>
@@ -56,11 +53,9 @@ const Popup = ({ series, isOpen, onClose }) => {
                 {series.ageRating}
               </span>
             </div>
-
-            {/* Deskripsi */}
             <p className="mt-4 text-gray-400">{series.description}</p>
           </div>
-
+          {/* Deskripsi sblh kanan*/}
           {/*  Pemeran, Genre, and Pembuat film */}
           <div className="ml-8 w-1/3">
             {/* Cast */}
@@ -79,7 +74,7 @@ const Popup = ({ series, isOpen, onClose }) => {
               </p>
             </div>
 
-            {/* Filmmaker */}
+            {/* Pembuat film */}
             <div className="flex justify-between mb-4">
               <p className="text-gray-500">Pembuat Film:</p>
               <p className="font-thin">{series.filmmaker}</p>
@@ -112,7 +107,7 @@ const Popup = ({ series, isOpen, onClose }) => {
           </div>
         </div>
 
-        {/* Close Button */}
+        {/* Tombol close */}
         <button
           onClick={onClose}
           className="mt-8 mb-4 bg-gray-600 text-white rounded px-4 py-2 hover:bg-gray-500 mx-6"

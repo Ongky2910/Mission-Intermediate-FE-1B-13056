@@ -8,6 +8,9 @@ module.exports = {
   darkMode: false,
   theme: {
     extend: {
+      fontFamily: {
+        londrina: ['Londrina Solid', 'sans-serif'],
+      },
       colors: {
         gray: {
           DEFAULT: '#3A3541DE', 
@@ -27,5 +30,7 @@ module.exports = {
       },
     },
   },
-  plugins: [],
-}
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+  ],
+};

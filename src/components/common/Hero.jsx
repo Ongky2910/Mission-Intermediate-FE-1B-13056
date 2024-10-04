@@ -36,7 +36,7 @@ const Hero = ({
         
  
         <h1 className="text-4xl font-semibold mb-4">{title}</h1>
-        <p className=" font-light text-balance">{description} </p>
+        <p className="font-light line-clamp-5 max-w-3xl text-left">{description} </p>
       </div>
       <button
         className="bg-transparent absolute bottom-10 mb-8 right-10 border-gray-500 rounded-full px-2 py-2"

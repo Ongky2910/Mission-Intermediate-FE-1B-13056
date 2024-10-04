@@ -1,5 +1,5 @@
 import React from "react";
-import { PiPlusCircleLight } from "react-icons/pi";
+import { RxCheckCircled } from "react-icons/rx";
 import { MdPlayCircle } from "react-icons/md";
 
 const HoverPoster = React.memo(
@@ -25,30 +25,30 @@ const HoverPoster = React.memo(
                 <option></option>
               </select>
 
-            
-
-              {/* Tombol Play dan Info Container */}
+              {/* Tombol play dan Info  */}
               <div className="p-6 flex">
-         
-          <div className="flex-1">
+                <div className="flex-1">
+                  <div className="flex items-center space-x-4 mb-4">
+                    <RxCheckCircled
+                      style={{
+                        position: "absolute",
+                        bottom: "36px",
+                        left: "150px",
+                      }}
+                      size="40px"
+                    />
 
-            <div className="flex items-center space-x-4 mb-4">
-              <PiPlusCircleLight
-                style={{ position: "absolute", bottom: "36px", left: "150px" }}
-                size="40px"
-              />
-             
-                <button
-                  className="relative bottom-10 left-4 mb-2 play-button"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    onOpenTrailer(item.trailerUrl, item);
-                  }}
-                >
-                  <MdPlayCircle size={30} />
-                </button>
-              </div>
-              </div>
+                    <button
+                      className="relative bottom-10 left-4 mb-2 play-button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onOpenTrailer(item.trailerUrl, item);
+                      }}
+                    >
+                      <MdPlayCircle size={30} />
+                    </button>
+                  </div>
+                </div>
               </div>
               <div className="relative bottom-5 left-4 flex items-center">
                 <span className="age-rating">{item.ageRating}</span>
@@ -56,7 +56,7 @@ const HoverPoster = React.memo(
               </div>
             </div>
 
-            {/* Genre */}
+            {/* Genre Container */}
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-center">
               <p className="text-gray-500 font-thin">
                 {item.genre?.join(" • ") || "No Genre Available"}

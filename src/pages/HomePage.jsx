@@ -5,6 +5,7 @@ import Category from "../components/common/Category";
 import Footer from "../components/common/Footer";
 import Popup from "../components/common/Popup";
 import Flag from "../components/common/Flag";
+import Rating from "/src/components/common/Rating";
 
 const Home = () => {
   const [isPopupOpen, setPopupOpen] = useState(false);
@@ -20,21 +21,39 @@ const Home = () => {
       genre: ["Comedy"],
       cast: ["Actor 1"],
       filmmaker: "Filmmaker 1",
+      rating: 4.5,
       episodes: [],
     },
     {
       title: "Blue Lock",
       image: "src/assets/image 219.png",
       trailerUrl: "url2",
+      rating: 4.8,
     },
     {
       title: "Avatar: The Way of Water",
       image: "src/assets/image 217.png",
       trailerUrl: "url3",
+      rating: 4.9,
     },
-    { title: "Suzume", image: "src/assets/image 228.png", trailerUrl: "url4" },
-    { title: "Fast X", image: "src/assets/Type=4.png", trailerUrl: "url5" },
-    { title: "Rio", image: "src/assets/image 208.png", trailerUrl: "url6" },
+    {
+      title: "Suzume",
+      image: "src/assets/image 228.png",
+      trailerUrl: "url4",
+      rating: 4.5,
+    },
+    {
+      title: "Fast X",
+      image: "src/assets/Type=4.png",
+      trailerUrl: "url5",
+      rating: 4.6,
+    },
+    {
+      title: "Rio",
+      image: "src/assets/image 208.png",
+      trailerUrl: "url6",
+      rating: 4.7,
+    },
   ];
 
   const topRated = [
@@ -134,6 +153,7 @@ const Home = () => {
         title="Melanjutkan Tonton Film"
         items={continueWatching}
         onOpenTrailer={handleOpenTrailer}
+        showRating={true}
       />
 
       <Category title="Top Rating Film dan Series Hari Ini" items={topRated} />
