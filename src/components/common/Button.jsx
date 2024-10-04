@@ -40,7 +40,7 @@ const Button = ({
 
   const buttonStyles = clsx(
     baseStyles,
-    colorStyles[color]?.[variant] || colorStyles, // Fallback to blue if color is invalid
+    colorStyles[color]?.[variant] || colorStyles, 
     className
   );
 
