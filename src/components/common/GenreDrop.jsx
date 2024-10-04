@@ -6,9 +6,9 @@ const Dropdown = ({ options, className, onChange }) => {
   const [selectedOption, setSelectedOption] = useState("");
 
   const handleOptionClick = (value) => {
-    setSelectedOption(value);  // Set the selected option
-    onChange(value);           // Call the onChange function passed from the parent
-    setIsOpen(false);          // Close the dropdown after selection
+    setSelectedOption(value);  
+    onChange(value);           
+    setIsOpen(false);          
   };
 
   return (

@@ -2,6 +2,8 @@ import { MdOutlineVolumeOff, MdPlayCircleOutline } from "react-icons/md";
 import { PiPlusCircleLight } from "react-icons/pi";
 import { AiOutlineCheck } from "react-icons/ai";
 
+
+
 const Popup = ({ series, isOpen, onClose }) => {
   if (!isOpen) return null;
 
@@ -10,7 +12,7 @@ const Popup = ({ series, isOpen, onClose }) => {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 z-50 overflow-auto">
       <div className="bg-custom-gray text-white rounded-lg w-11/12 md:w-5/6 lg:w-4/5 max-h-[90vh] overflow-y-auto relative">
-        {/* Image Poster at the top */}
+        {/* Gambar Poster */}
         <div className="relative w-full bg-cover bg-center h-auto">
           <img
             src={series.image}
@@ -55,11 +57,11 @@ const Popup = ({ series, isOpen, onClose }) => {
               </span>
             </div>
 
-            {/* Description */}
+            {/* Deskripsi */}
             <p className="mt-4 text-gray-400">{series.description}</p>
           </div>
 
-          {/* Right Section: Cast, Genre, and Filmmaker */}
+          {/*  Pemeran, Genre, and Pembuat film */}
           <div className="ml-8 w-1/3">
             {/* Cast */}
             <div className="flex justify-between mb-4">
@@ -85,7 +87,7 @@ const Popup = ({ series, isOpen, onClose }) => {
           </div>
         </div>
 
-        {/* Episodes Section at the Bottom */}
+        {/* Episodes */}
         <div className="p-6">
           <h3 className="text-2xl mt-8 mb-4">Episodes</h3>
           <div className="bg-custom-gray p-4 text-gray-400 font-normal rounded-lg">

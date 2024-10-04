@@ -5,61 +5,26 @@
 .lato-thin {
   font-family: "Lato", sans-serif;
   font-weight: 100;
-  font-style: normal;
 }
 
 .lato-light {
   font-family: "Lato", sans-serif;
   font-weight: 300;
-  font-style: normal;
 }
 
 .lato-regular {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  font-style: normal;
 }
 
 .lato-bold {
   font-family: "Lato", sans-serif;
   font-weight: 700;
-  font-style: normal;
 }
 
 .lato-black {
   font-family: "Lato", sans-serif;
   font-weight: 900;
-  font-style: normal;
-}
-
-.lato-thin-italic {
-  font-family: "Lato", sans-serif;
-  font-weight: 100;
-  font-style: italic;
-}
-
-.lato-light-italic {
-  font-family: "Lato", sans-serif;
-  font-weight: 300;
-  font-style: italic;
-}
-
-.lato-regular-italic {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.lato-bold-italic {
-  font-family: "Lato", sans-serif;
-  font-weight: 700;
-  font-style: italic;
-}
-
-.lato-black-italic {
-  font-family: "Lato", sans-serif;
-  font-weight: 900;
-  font-style: italic;
 }
 
 a {
@@ -67,6 +32,7 @@ a {
   color: #4f4f52;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
 }
@@ -75,9 +41,11 @@ a:hover {
   background-size: cover;
   background-position: center;
 }
-*{
+
+* {
   font-family: 'Lato', sans-serif;
 }
+
 body {
   height: 100%;
   overflow-x: hidden;
@@ -111,17 +79,88 @@ button:focus-visible {
   z-index: 50;
 }
 
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.hover-poster-container {
+  position: fixed;
+  overflow:hidden;
+  width: 100%;
+  height: 100%;
+  top: 0; 
+  left: 0; 
+  right: 30px; 
+  bottom: 10; 
+ 
+  display: flex; 
+  align-items:center; 
+  justify-content: center;
+  pointer-events: none; 
+}
+
+.poster {
+
+  margin: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.3s ease; /* Ensure smooth scaling */
+}
+
+.poster-image {
+  width: 408px; 
+  object-fit: cover;
+  transition: transform 0.3s;
+  
+}
+
+.poster:hover .poster-image {
+  transform: scale(1.1); 
+}
+
 .hover-effect {
-  width: 408px;
-  height: 460px;
-  gap: 0;
-  border-radius: 20px 0px 0px 0px;
-  opacity: 0;
-  transition: opacity 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px; /* Space for buttons and info */
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Smooth transition */
+  pointer-events: auto; /* Allow interaction */
 }
 
-.hover-effect:hover {
-  opacity: 1;
-  box-shadow: 0px 20px 48px 0px rgba(255, 255, 255, 0.1);
+.poster:hover .hover-effect {
+  opacity: 1; /* Make it visible on hover */
 }
 
+.play-button, .checklist-button {
+
+margin: 10px 10px 20px;
+
+  color: white; 
+}
+
+.info {
+  display: flex;
+  flex-direction: column; /* Stack age rating and genre vertically */
+}
+
+.age-rating {
+  background-color: gray; /* Background for age rating */
+  padding: 5px; /* Padding for age rating */
+  border-radius: 5px; /* Rounded corners */
+  margin-bottom: 5px; /* Space below age rating */
+}
+
+.genre, .total-episodes {
+  font-size: 0.9rem; /* Smaller font size for genre and total episodes */
+  color: lightgray; /* Color for genre and total episodes */
+}

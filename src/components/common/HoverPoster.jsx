@@ -1,25 +1,72 @@
 import React from "react";
 import { PiPlusCircleLight } from "react-icons/pi";
+import { MdPlayCircle } from "react-icons/md";
 
-const HoverPoster = ({ series, onClick }) => {
-  return (
-    <div
-      className="relative cursor-pointer w-[408px] h-[460px] rounded-[20px_0_0_0] overflow-hidden transition-all duration-300 hover:opacity-100 hover:shadow-[0px_20px_48px_0px_rgba(255,255,255,0.1)]"
-      onClick={onClick}
-    >
-      <img
-        src={series.image}
-        alt={series.title}
-        className="w-[408px] h-[460px] rounded-lg opacity-0 hover:opacity-100 transition-opacity duration-300"
-      />
-      <div className="absolute inset-0 bg-black opacity-0 hover:opacity-80 transition-opacity">
-        <div className="flex items-center justify-center h-full text-white text-lg font-bold">
-          <PiPlusCircleLight size="40px" className="text-white" />
-          <h2 className="text-2xl font-medium text-white">{series.title}</h2>
-        </div>
+const HoverPoster = React.memo(
+  ({ series, onClick, onOpenTrailer, hoveredItemId }) => {
+    if (!series || series.length === 0) {
+      console.log("No Series available");
+      return null;
+    }
+
+    return (
+      <div className="bg-gray-input cursor-pointer w-[408px] h-[420px] rounded-[20px] overflow-hidden transition-all duration-300 hover:opacity-100 hover:shadow-[0px_20px_48px_0px rgba(255,255,255,0.1)]">
+        {series.map((item) => (
+          <div key={item.id} className="poster" onClick={() => onClick(item)}>
+            <div className="relative">
+              <img
+                src={item.image}
+                alt={item.title}
+                className="w-full h-auto rounded-lg object-cover transition-opacity duration-300"
+              />
+
+              {/* Dropdown Menu */}
+              <select className="absolute bottom-10 right-10  bg-gray-700 text-white flex items-center space-x-2 p-2 rounded-full">
+                <option></option>
+              </select>
+
+              {/* Add to Checklist Button */}
+
+              {/* Play Button and Info Container */}
+              <div className="p-6 flex">
+         
+          <div className="flex-1">
+
+            <div className="flex items-center space-x-4 mb-4">
+              <PiPlusCircleLight
+                style={{ position: "absolute", bottom: "36px", left: "150px" }}
+                size="40px"
+              />
+             
+                <button
+                  className="relative bottom-10 left-4 mb-2 play-button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onOpenTrailer(item.trailerUrl, item);
+                  }}
+                >
+                  <MdPlayCircle size={30} />
+                </button>
+              </div>
+              </div>
+              </div>
+              <div className="relative bottom-5 left-4 flex items-center">
+                <span className="age-rating">{item.ageRating}</span>
+                <p className="total-episodes ml-2">{item.totalEpisodes}</p>
+              </div>
+            </div>
+
+            {/* Genre Container */}
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-center">
+              <p className="text-gray-500 font-thin">
+                {item.genre?.join(" • ") || "No Genre Available"}
+              </p>
+            </div>
+          </div>
+        ))}
       </div>
-    </div>
-  );
-};
+    );
+  }
+);
 
 export default HoverPoster;

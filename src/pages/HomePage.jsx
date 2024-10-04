@@ -4,6 +4,7 @@ import Hero from "../components/common/Hero";
 import Category from "../components/common/Category";
 import Footer from "../components/common/Footer";
 import Popup from "../components/common/Popup";
+import Flag from "../components/common/Flag";
 
 const Home = () => {
   const [isPopupOpen, setPopupOpen] = useState(false);

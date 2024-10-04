@@ -20,13 +20,13 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-gray-input py-4">
-      <div className="container mx-auto flex justify-between items-center">
-        {/* Logo & Nav Links */}
+    <nav className="bg-gray-input py-2 mb-0">
+      <div className="container mx-5 flex justify-between items-center">
+        {/* Logo & Link nav */}
         <div className="flex items-center space-x-8">
           <Logo
             src="src/assets/Logo (1).png"
-            className="mb-5 ml-5 mt-2 pt-5 w-60 h-30"
+            className="mb-5 ml-6 mt-2 pt-5 w-60 h-30"
           />
           <Link
             to="/series"
