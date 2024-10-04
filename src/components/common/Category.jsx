@@ -9,10 +9,10 @@ const Category = ({
   handleMouseLeave,
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const itemsToShow = 5; // Adjust this to show more items at once
+  const itemsToShow = 5; 
   const totalItems = items.length;
 
-  // Ensure currentIndex does not exceed bounds
+ 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % Math.ceil(totalItems / itemsToShow));
   };
@@ -25,10 +25,10 @@ const Category = ({
     return null;
   }
 
-  // Calculate the range of items to display based on the currentIndex
+  
   const displayedItems = items.slice(
     currentIndex * itemsToShow,
-    currentIndex * itemsToShow + itemsToShow + 1 // Show an extra item for the smooth effect
+    currentIndex * itemsToShow + itemsToShow + 1 
   );
 
   return (
