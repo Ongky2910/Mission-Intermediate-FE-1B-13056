@@ -11,7 +11,8 @@ const LoginForm = () => {
   const [password, setPassword] = useState("");
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
-  const togglePasswordVisibility = () => setIsPasswordVisible(!isPasswordVisible);
+  const togglePasswordVisibility = () =>
+    setIsPasswordVisible(!isPasswordVisible);
 
   return (
     <div
@@ -20,11 +21,11 @@ const LoginForm = () => {
         backgroundImage: "url('src/assets/teathrical.jpeg')",
       }}
     >
-      <div className="bg-gray-input  bg-opacity-90 p-10 mt-5 rounded-xl w-full max-w-md"> 
-        <Logo src="src/assets/Logo (1).png" className="mb-4" />
-        <h2 className="text-2xl font-medium text-center text-white">
-          Masuk
-        </h2>
+      <div className="bg-gray-input  bg-opacity-90 p-10 mb-12 rounded-xl w-full max-w-md">
+        <div className="flex justify-center mb-4">
+          <Logo src="src/assets/Logo (1).png" className="mb-4 " />
+        </div>
+        <h2 className="text-2xl font-semibold text-center text-white">Masuk</h2>
         <p className="text-center font-light text-white mb-3 pb-2">
           Selamat datang kembali!
         </p>
@@ -36,8 +37,8 @@ const LoginForm = () => {
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            placeholder="Masukkan username"        
-            />
+            placeholder="Masukkan username"
+          />
 
           <InputField
             id="password"
@@ -64,13 +65,16 @@ const LoginForm = () => {
           </div>
 
           <Link to="/home">
-            <Button text="Masuk" className="bg-gray-600 hover:bg-white-secondary text-white" />
+            <Button
+              text="Masuk"
+              className="bg-gray-600 hover:bg-white-secondary text-white"
+            />
           </Link>
           <p className="text-sm text-center text-gray-400 mb-1 mt-1">Atau</p>
 
-          <Button 
-            text="Masuk dengan Google" 
-            type="secondary" 
+          <Button
+            text="Masuk dengan Google"
+            type="secondary"
             className="border border-gray-700 hover:bg-orange-700 text-white"
             icon={<FcGoogle />}
             iconPosition="left"
