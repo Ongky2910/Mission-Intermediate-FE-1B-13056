@@ -63,6 +63,7 @@ h2 {
   place-items: center;
 }
 
+
 button {
   border: 1px solid transparent;
   font-weight: 400;
@@ -75,9 +76,6 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-.premium-flag {
-  z-index: 50;
-}
 
 .absolute {
   position: absolute;
@@ -108,7 +106,7 @@ button:focus-visible {
   margin: 10px;
   cursor: pointer;
   overflow: hidden;
-  transition: transform 0.3s ease; /* Ensure smooth scaling */
+  transition: transform 0.3s ease; 
 }
 
 .poster-image {
@@ -129,38 +127,34 @@ button:focus-visible {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.8);
   color: white;
-  padding: 10px; /* Space for buttons and info */
+  padding: 10px; 
   display: flex;
-  flex-direction: column; /* Stack elements vertically */
-  opacity: 0; /* Initially hidden */
-  transition: opacity 0.3s ease; /* Smooth transition */
-  pointer-events: auto; /* Allow interaction */
+  flex-direction: column; 
+  opacity: 0;
+  transition: opacity 0.3s ease; 
+  pointer-events: auto; 
 }
 
 .poster:hover .hover-effect {
-  opacity: 1; /* Make it visible on hover */
+  opacity: 1; 
 }
 
 .play-button, .checklist-button {
 
 margin: 10px 10px 20px;
-
   color: white; 
 }
 
 .info {
   display: flex;
-  flex-direction: column; /* Stack age rating and genre vertically */
+  flex-direction: column; 
 }
 
-.age-rating {
-  background-color: gray; /* Background for age rating */
-  padding: 5px; /* Padding for age rating */
-  border-radius: 5px; /* Rounded corners */
-  margin-bottom: 5px; /* Space below age rating */
-}
+
 
 .genre, .total-episodes {
-  font-size: 0.9rem; /* Smaller font size for genre and total episodes */
-  color: lightgray; /* Color for genre and total episodes */
+  font-size: 0.9rem; 
+  color: lightgray; 
 }
+
+
