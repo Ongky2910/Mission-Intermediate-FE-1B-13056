@@ -21,9 +21,11 @@ const RegisterForm = () => {
         backgroundImage: "url('src/assets/auditorium-2584269_1280.jpg')",
       }}
     >
-      <div className=" bg-gray-input bg-opacity-90 p-8 mt-5 rounded-xl w-full max-w-md">
-        <Logo src="src/assets/Logo (1).png" className="mb-4" />
-        <h2 className="text-2xl font-medium text-center text-white mb-1">
+      <div className=" bg-gray-input bg-opacity-90 p-8 rounded-xl w-full max-w-md">
+      <div className="flex justify-center mb-2">
+          <Logo src="src/assets/Logo (1).png" className="mb-4 " />
+        </div>
+        <h2 className="text-2xl font-semibold text-center text-white mb-1">
           Daftar
         </h2>
         <p className="text-center text-white font-light mb-2 pb-5">Selamat datang!</p>
