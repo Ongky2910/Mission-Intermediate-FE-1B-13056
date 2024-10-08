@@ -1,20 +1,16 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Logo from "/src/components/common/Chill";
+import Logo from "/src/components/common/Chill"; // Your Logo component
 import { IoMdExit } from "react-icons/io";
 import { GoStar } from "react-icons/go";
 import { RxAvatar } from "react-icons/rx";
+import Dropdown from "./GenreDrop"; // Adjust the import path as needed
 
 const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleDropdown = () => {
     setDropdownOpen((prev) => !prev);
-  };
-
-  const toggleMenu = () => {
-    setMenuOpen((prev) => !prev);
   };
 
   const handleExit = () => {
@@ -22,43 +18,59 @@ const Navbar = () => {
     window.location.href = "/login";
   };
 
+  // Genre options
+  const genreOptions = [
+    { label: "Aksi", value: "Aksi" },
+    { label: "Drama", value: "Drama" },
+    { label: "Komedi", value: "Komedi" },
+    { label: "Horror", value: "Horror" },
+    { label: "Britania", value: "Britania" },
+    { label: "Anime", value: "Anime" },
+  ];
+
   return (
-    <nav className="bg-gray-input py-2">
-      <div className="container mx-5 flex justify-between items-center">
-        {/* Logo and Hamburger Menu for Mobile */}
-        <div className="flex items-center">
+    <nav className="bg-gray-input py-2 mx-0 ">
+      <div className="flex items-center justify-between">
+        {/* Left Side: Logo and Navigation Links */}
+        <div className="flex items-center space-x-4">
+          {/* Logo */}
           <Logo
             src="src/assets/Vector (1).png"
             alt="Chill Logo"
-            className="h-20" 
+            className="h-20 ml-4" // Adjust height if necesary
+            text="chill" // Show text
           />
-          <button onClick={toggleMenu} className="md:hidden text-white focus:outline-none ml-2">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
-            </svg>
-          </button>
+
+          {/* Link navigasi */}
+          <div className="flex items-center space-x-2 md:space-x-14 text-nowrap"> {/* Links visible on all screens */}
+            <Link to="/series" className="text-white font-light text-sm md:text-base md:ml-12  hover:text-gray-400 transition">
+              Series
+            </Link>
+            <Link to="/home" className="text-white font-light text-sm md:text-base hover:text-gray-400 transition">
+              Film
+            </Link>
+            <Link to="/mylist" className="text-white font-light text-sm md:text-base hover:text-gray-400 transition">
+              Daftar Saya
+            </Link>
+          </div>
         </div>
 
-        {/* Navigation Links */}
-        <div className={`flex items-center space-x-2 ${menuOpen ? "flex md:flex-row" : "hidden md:flex"}`}>
-          <Link to="/series" className="text-white font-light hover:text-gray-400 transition">
-            Series
-          </Link>
-          <Link to="/home" className="text-white font-light hover:text-gray-400 transition">
-            Film
-          </Link>
-          <Link to="/mylist" className="text-white font-light hover:text-gray-400 transition">
-            Daftar Saya
-          </Link>
+        {/* Genre Dropdown (di mobile) */}
+        <div className="md:hidden ">
+          <Dropdown
+            options={genreOptions}
+            onChange={(value) => console.log("Selected Genre:", value)}
+            isMobile={true}
+          />
         </div>
 
         {/* Avatar Dropdown */}
         <div className="relative">
           <button onClick={toggleDropdown} className="focus:outline-none">
             <img
-              src="src/assets/Ellipse 395.png"
+              src="src/assets/Ellipse 395.png" // Avatar image
               alt="Profile"
-              className={`w-10 h-10 rounded-full border-2 border-white transition-transform ${dropdownOpen ? "rotate-180" : ""}`}
+              className="w-10 h-10 mr-10 rounded-full border-2 border-white transition-transform"
             />
           </button>
           {dropdownOpen && (
@@ -79,7 +91,6 @@ const Navbar = () => {
           )}
         </div>
       </div>
-
     </nav>
   );
 };

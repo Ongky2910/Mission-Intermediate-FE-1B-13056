@@ -4,7 +4,7 @@ import Dropdown from "/src/components/common/GenreDrop.jsx";
 import Hero from "../components/common/Hero";
 import Category from "../components/common/Category";
 import Footer from "../components/common/Footer";
-import Popup from "../components/common/Popup";
+import Popup from "../components/Popup";
 import HoverPoster from "/src/components/common/HoverPoster";
 import Rating from "/src/components/common/Rating";
 
@@ -42,7 +42,6 @@ const MyList = (props) => {
     setHoveredItemId(null);
   };
   
-  const exampleRating = 4.;
 
   const options = [
     { value: "Aksi", label: "Aksi" },
@@ -63,7 +62,7 @@ const MyList = (props) => {
   const continueWatching = [
     {
       id: 1,
-      title: "Alice in Borderland",
+      title: "Alice in Borderland |",
       image: "src/assets/aliceinborderlandpopup.webp",
       isNewEpisode: true,
       rating: 4.5,
@@ -149,7 +148,7 @@ const MyList = (props) => {
     },
     {
       id: 3,
-      title: "All of Us are Dead",
+      title: "All of Us are Dead |",
       image: "src/assets/image 223 (1).png",
       isNewEpisode: true,
       rating: 4.2,
@@ -176,7 +175,7 @@ const MyList = (props) => {
     },
     {
       id: 100,
-      title: "My Hero Academia",
+      title: "My Hero Academia | ",
       image: "src/assets/image 231.png",
       rating: 5,
       isNewEpisode: true,

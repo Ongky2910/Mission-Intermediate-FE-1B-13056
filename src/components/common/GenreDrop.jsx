@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import clsx from 'clsx';
+import { RiArrowDropDownLine } from 'react-icons/ri';
 
-const Dropdown = ({ options, className, onChange }) => {
+const Dropdown = ({ options, className, onChange, isMobile}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState("");
 
@@ -15,16 +16,21 @@ const Dropdown = ({ options, className, onChange }) => {
     <div className={clsx("relative", className)}>
       <button 
         className={clsx(
-          "flex items-center justify-between w-30 rounded-lg bg-gray-input text-white border border-gray-700 py-2 px-6 focus:outline-none",
-          className
+          "flex items-center justify-between w-30 rounded-lg bg-gray-input text-white py-2 px-4 focus:outline-none",
+           isMobile ? "bg-gray-input text-sm" : "bg-gray-800"
+          ,className
         )}
         onClick={() => setIsOpen(!isOpen)}
       >
-        {selectedOption || "Genre"}
+        <span>{selectedOption || "Genre"}</span>
+        {isMobile && <RiArrowDropDownLine className=" text-white" size={20} />} {/* Down arrow */}
       </button>
       {isOpen && (
-        <div className="absolute z-10 w-5/12 bg-gray-input border border-gray-700 rounded shadow-lg">
-          <div className="grid grid-cols-2 p-2 max-h-60 overflow-y-auto">
+        <div className={clsx(
+          "absolute z-10 w-full bg-gray-input rounded shadow-lg",
+          isMobile ? "w-30" : "w-50" 
+        )}>
+          <div className="md:grid grid-cols-2 p-2 max-h-60 overflow-y-auto">
             {options.map((option) => (
               <button
                 key={option.value}

@@ -8,7 +8,7 @@ const Rating = ({ rating, showRating }) => {
     <div className="flex items-center text-white">
     <span className="text-white font-serif">
        {'★'.repeat(filledStars)} 
-      {'☆'.repeat(5 - filledStars - (halfStar ? 1 : 0))} {/* Empty stars */}
+      {'☆'.repeat(5 - filledStars - (halfStar ? 1 : 0))} 
     </span>
     {showRating && <span className="text-white ml-2">{rating}/5</span>}
     </div>

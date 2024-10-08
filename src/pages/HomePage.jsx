@@ -3,7 +3,7 @@ import Navbar from "../components/common/Navbar";
 import Hero from "../components/common/Hero";
 import Category from "../components/common/Category";
 import Footer from "../components/common/Footer";
-import Popup from "../components/common/Popup";
+import Popup from "../components/Popup";
 import Flag from "../components/common/Flag";
 import Rating from "/src/components/common/Rating";
 
@@ -31,7 +31,7 @@ const Home = () => {
       rating: 4.8,
     },
     {
-      title: "Avatar: The Way of Water",
+      title: "Avatar 2",
       image: "src/assets/image 217.png",
       trailerUrl: "url3",
       rating: 4.9,
@@ -43,13 +43,13 @@ const Home = () => {
       rating: 4.5,
     },
     {
-      title: "Fast X",
+      title: "Fast X Furious",
       image: "src/assets/Type=4.png",
       trailerUrl: "url5",
       rating: 4.6,
     },
     {
-      title: "Rio",
+      title: "Rio (2011)",
       image: "src/assets/image 208.png",
       trailerUrl: "url6",
       rating: 4.7,
@@ -128,10 +128,16 @@ const Home = () => {
       image: "src/assets/nowayhome.webp",
       isPremium: true,
     },
-    { title: "Thunderbolts", image: "src/assets/thunderbolts.webp" },
+    { title: "Thunderbolts", 
+      image: "src/assets/thunderbolts.webp",
+      isPremium: true,
+     },
     { title: "Sonic 2", image: "src/assets/Number=29.png" },
     { title: "Miles Morales", image: "src/assets/milesmorales.jpeg" },
-    { title: "Ted Lasso", image: "src/assets/Number=23.png" },
+    { title: "Ted Lasso", 
+      image: "src/assets/Number=23.png",
+      isNewEpisode: true,
+     },
     { title: "Captain Marvel", image: "src/assets/captmarvel.jpg" },
   ];
 
