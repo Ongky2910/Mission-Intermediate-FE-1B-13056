@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { MdOutlineVolumeOff } from "react-icons/md";
 import { PiPlusCircleLight } from "react-icons/pi";
-import { useFavorites } from '/src/components/common/useFavorites';
 
 const Popup = ({ series, isOpen, onClose }) => {
-  const { addFavorite } = useFavorites();
+
   const [selectedEpisodeIndex, setSelectedEpisodeIndex] = useState(null);
 
    {/* Oncoming logika tmbh favorit list */}
