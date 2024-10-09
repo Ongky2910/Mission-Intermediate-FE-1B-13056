@@ -5,9 +5,12 @@ module.exports = {
     "./components/**/*.html.js",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: false,
+
   theme: {
     extend: {
+       fontFamily: {
+        londrina: ['Londrina Solid', 'sans-serif'],
+      },
       colors: {
         gray: {
           DEFAULT: '#3A3541DE', 
@@ -27,5 +30,4 @@ module.exports = {
       },
     },
   },
-  plugins: [],
 }
