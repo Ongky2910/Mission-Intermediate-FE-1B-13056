@@ -13,10 +13,14 @@ const Hero = ({
   backgroundImage,
   onOpenPopup,
   trailerUrl,
+  
 }) => {
+  const [isSoundOn, setIsSoundOn] = useState(true);
+  
   const handleHeroClick = () => {
     onOpenPopup(trailerUrl);
-  const [isSoundOn, setIsSoundOn] = useState(true);
+  };
+  
   const handleSoundToggle = () => {
     setIsSoundOn(!isSoundOn);
   };
@@ -72,6 +76,6 @@ const Hero = ({
     </div>
   );
 };
-};
+
 
 export default Hero;
