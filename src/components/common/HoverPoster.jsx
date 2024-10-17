@@ -21,14 +21,14 @@ const HoverPoster = React.memo(
             />
             <div className="absolute inset-0 "></div>
 
-            {/* Content below the image */}
+            {/* Konten */}
             <div className="absolute bottom-0 left-0 right-0 bg-gray-800 p-4 flex flex-col">
               <div className="flex items-center justify-between ">
                 <span className="text-lg font-semibold text-white"></span>
             
               </div>
 
-              {/* Play Button and Dropdown Container */}
+              {/* Tombol play & dropdown side by side */}
               <div className="flex items-center justify-between mt-1">
                 <div className="flex items-center">
                   <button
@@ -50,14 +50,14 @@ const HoverPoster = React.memo(
                 
               </div>
 
-              {/* Episode Total and Age Rating */}
+              {/* Episode Total dan Age */}
               <div className="mt-2 flex items-center">
               <span className="border border-gray-500 rounded-full px-2 mr-2 text-sm text-white flex items-center">{item.ageRating}</span>
                 <span className="text-sm font-medium text-white">{item.totalEpisodes}</span>
               
               </div>
 
-              {/* Genre centered at the bottom */}
+              {/* Genre paling abawah */}
               <div className="mt-2 flex justify-center w-full text-gray-300 text-sm space-x-2">
                 <p className="flex-grow text-center">{item.genre?.join(" • ") || "No Genre Available"}</p>
               </div>

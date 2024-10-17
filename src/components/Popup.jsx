@@ -1,24 +1,21 @@
 import React, { useState } from 'react';
 import { MdOutlineVolumeOff } from "react-icons/md";
 import { PiPlusCircleLight } from "react-icons/pi";
-import { useFavorites } from '/src/components/common/useFavorites';
+
 
 const Popup = ({ series, isOpen, onClose }) => {
-  const { addFavorite } = useFavorites();
+  
   const [selectedEpisodeIndex, setSelectedEpisodeIndex] = useState(null);
 
-  const handleAddToFavorites = () => {
-    console.log("Adding to favorites:", series);
-    addFavorite(series);
-  };
+
 
   const handleEpisodeClick = (index) => {
     setSelectedEpisodeIndex(index);
-    // Add additional logic for opening trailer or other actions
+   
   };
 
   const handleOverlayClick = (e) => {
-    // Close popup if clicking on the overlay
+   
     if (e.target === e.currentTarget) {
       onClose();
     }
@@ -78,9 +75,9 @@ const Popup = ({ series, isOpen, onClose }) => {
             <p className="mt-4 text-white">{series.description}</p>
           </div>
 
-          {/* Pemeran, Genre, and Pembuat film */}
+         
           <div className="ml-4 md:ml-8 w-full md:w-1/3">
-            {/* Cast */}
+            {/* Pemeran */}
             <div className="grid grid-cols-1 md:grid-cols-[120px_1fr]">
               <p className="text-gray-400 flex-1 whitespace-nowrap">Cast</p>
               <p className="font-thin text-left">{series.cast.join(", ")}</p>

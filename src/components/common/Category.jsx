@@ -9,6 +9,7 @@ const Category = ({
   onOpenTrailer,
   handleMouseEnter,
   handleMouseLeave,
+  className
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const itemsToShowDesktop = 5; 
@@ -29,7 +30,7 @@ const Category = ({
 
   return (
     <section className="py-2 bg-gray-input relative">
-      <h2 className="text-2xl font-semibold mb-4 mx-4 md:mx-10 lg:mx-20">
+      <h2 className="text-2xl font-medium mb-4 md:mb-3 md:mt-10  mx-4 md:mx-10 lg:mx-20">
         {title}
       </h2>
 
@@ -68,7 +69,7 @@ const Category = ({
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-full rounded object-cover cursor-pointer"
+                  className="w-full h-full rounded object-cover cursor-pointer "
                 />
                 <div className="flex justify-between md:flex-none items-center">
                   <h3 className="text-white">{item.title}</h3>
@@ -79,7 +80,7 @@ const Category = ({
                   )}
                 </div>
 
-                <div className="absolute md:top-6 top-12 font-extralight p-10 md:right-0 right-6 ">
+                <div className="absolute md:top-6 top-12 font-extralight p-11 md:right-0 right-5 ">
                   {item.isTop10 && <Flag label="Top 10" type="top10" className="md:px-0 md:ml-4 md:py-4"/>}
                 </div>
 

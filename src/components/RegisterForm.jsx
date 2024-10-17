@@ -64,7 +64,7 @@ const RegisterForm = () => {
 
           <div className="flex text-sm text-gray-400 mb-5">
             Sudah punya akun?
-            <Link to="/login" className="text-white">
+            <Link to="/login" className="text-white ml-1">
               {" "}
               Masuk
             </Link>

@@ -67,7 +67,9 @@ const MyList = (props) => {
       isNewEpisode: true,
       rating: 4.5,
       trailerUrl: "https://www.youtube.com/embed/example1",
-      date: "2020 12 episode 16+",
+      date: "2020",
+      totalEpisodes: "10 Episode",
+      ageRating: "17+",
       description:
         "Serial televisi Jepang yang bercerita tentang sekelompok anak muda yang terperangkap di dunia paralel dan harus bertahan hidup dengan mengikuti serangkaian permainan maut.",
       genre: ["Thriller", "Drama"],
@@ -94,7 +96,7 @@ const MyList = (props) => {
       ageRating: "16+",
       description:
         "Pelatih sepak bola perguruan tinggi Amerika Ted Lasso pergi ke London untuk mengelola AFC Richmond, tim sepakbola Liga Utama Inggris yang kesulitan.",
-      genre: [":Komedi", "Drama", "Olahraga"],
+      genre: ["Komedi", "Drama", "Olahraga"],
       cast: [
         "Jason Sudeikis",
         "Brett Goldstein",
@@ -122,7 +124,7 @@ const MyList = (props) => {
         },
         {
           title: "Trent Crimm: Independent",
-          duration: "3o min",
+          duration: "30 min",
           description:
             "To arrange an in-depth expose, Rebecca pairs cynical journalist Trent Crimm with Ted for a day.Ted and Roy...",
           trailerUrl: "https://www.youtube.com/embed/episode_trailer2",
@@ -363,29 +365,25 @@ const MyList = (props) => {
         title="Film Persembahan Chill"
         items={topRated}
         onOpenTrailer={handleOpenTrailer}
-        handleMouseEnter={handleMouseEnter}
-        handleMouseLeave={handleMouseLeave}
+    
       />
       <Category
         title="Top Rating Film Hari Ini"
         items={topRated}
         onOpenTrailer={handleOpenTrailer}
-        handleMouseEnter={handleMouseEnter}
-        handleMouseLeave={handleMouseLeave}
+      
       />
       <Category
         title="Film Trending"
         items={trendingMovies}
         onOpenTrailer={handleOpenTrailer}
-        handleMouseEnter={handleMouseEnter}
-        handleMouseLeave={handleMouseLeave}
+       
       />
       <Category
         title="Rilis Baru"
         items={newReleases}
         onOpenTrailer={handleOpenTrailer}
-        handleMouseEnter={handleMouseEnter}
-        handleMouseLeave={handleMouseLeave}
+       
       />
 
       <Footer />

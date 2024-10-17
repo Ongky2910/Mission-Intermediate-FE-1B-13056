@@ -3,7 +3,7 @@ import clsx from "clsx";
 
 const Flag = ({label, type, className, position }) => {
     const flagStyles =clsx(
-        "absolute top-0 left-0 px-2 py-2 text-xs rounded-br-lg font-normal z-index-10",
+        "absolute top-0 left-0 text-xs rounded-br-lg font-normal z-index-10",
         className,
         {
         "bg-red-600 text-white": type === "top10", 
@@ -13,11 +13,16 @@ const Flag = ({label, type, className, position }) => {
         position
     );
 
-  return (
-    <div className={flagStyles}>
-        {label}  
-    </div>
-  )
+    const extraPadding = type === "top10" ? "py-10" : "py-2";
+
+    return (
+      <div 
+          className={`${flagStyles}  ${extraPadding}`}
+          style={{ padding: '0.25rem 0.5rem' }} 
+      >
+          {label}  
+      </div>
+  );
 }
 
 export default Flag;

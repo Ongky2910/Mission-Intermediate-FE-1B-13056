@@ -5,7 +5,7 @@ module.exports = {
     "./components/**/*.html.js",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: false,
+
   theme: {
     extend: {
       fontFamily: {
@@ -18,7 +18,8 @@ module.exports = {
           input: '#181A1C',
         },
         blue: {
-          DEFAULT: '#0F1E93',     
+          DEFAULT: '#0F1E93',   
+          input: '#0F1E93',  
         },
         white: {
           DEFAULT: '#E7E3FC',   
@@ -28,9 +29,9 @@ module.exports = {
           premium: '#B7A207',  
         },
       },
+      backgroundImage: {
+        'gradient-blue': 'linear-gradient(286.17deg, #192DB7 0%, #5370D4 100%)',
+      },
     },
   },
-  plugins: [
-    require('@tailwindcss/line-clamp'),
-  ],
 };

@@ -20,7 +20,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <div className="bg-gray-input py-8 flex flex-col md:flex-row justify-between items-start border-t-[1px] border-gray-700">
+    <div className="bg-gray-input py-8 flex flex-col md:flex-row justify-between mt-10 items-start border-t-[1px] border-gray-700">
       <div className="flex flex-col items-start mx-5">
         <Logo src="src/assets/Logo (1).png" className="mt-5 mb-5" width="full" height="auto" />
         <p className="mb-5 text-gray-400 whitespace-nowrap">© 2024 Ongky Permana All Rights Reserved.</p>
@@ -30,7 +30,7 @@ const Footer = () => {
         {/* Genre Section dgn mobile dropdown */}
         <div className="flex flex-col">
           <h3
-            className="font-semibold cursor-pointer mt-3 mb-3 "
+            className="font-medium cursor-pointer mt-3 mb-3 text-white "
             onClick={isMobile ? toggleGenres : undefined}
           >
             Genre {isMobile ? (showGenres ? '▼' : '▲') : ''}
@@ -66,7 +66,7 @@ const Footer = () => {
         {/* Bantuan Mobile Section */}
         <div className="flex flex-col mt-2 md:ml-20 md:mt-2">
           <h3
-            className="font-medium cursor-pointer mb-3 "
+            className="font-medium cursor-pointer mb-3 text-white"
             onClick={isMobile ? toggleHelp : undefined}
           >
             Bantuan {isMobile ? (showHelp ? '▼' : '▲') : ''}

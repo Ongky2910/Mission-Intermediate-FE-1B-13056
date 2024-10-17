@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Logo from "/src/components/common/Chill"; // Your Logo component
+import Logo from "/src/components/common/Chill"; 
 import { IoMdExit } from "react-icons/io";
 import { GoStar } from "react-icons/go";
+import { RiArrowDropDownLine } from "react-icons/ri";
 import { RxAvatar } from "react-icons/rx";
-import Dropdown from "./GenreDrop"; // Adjust the import path as needed
+import Dropdown from "./GenreDrop"; 
 
 const Navbar = () => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [avatarDropdownOpen, setAvatarDropdownOpen] = useState(false);
 
-  const toggleDropdown = () => {
-    setDropdownOpen((prev) => !prev);
+  const toggleAvatarDropdown = () => {
+    setAvatarDropdownOpen((prev) => !prev);
   };
 
   const handleExit = () => {
@@ -29,21 +30,19 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-gray-input py-2 mx-0 ">
+    <nav className="bg-gray-input py-2 mx-0 overflow-hidden">
       <div className="flex items-center justify-between">
-        {/* Left Side: Logo and Navigation Links */}
         <div className="flex items-center space-x-4">
           {/* Logo */}
           <Logo
             src="src/assets/Vector (1).png"
             alt="Chill Logo"
-            className="h-20 ml-4" // Adjust height if necesary
-            text="chill" // Show text
+            className="h-20 ml-4 md:ml-12" 
+            text="chill" 
           />
-
           {/* Link navigasi */}
-          <div className="flex items-center space-x-2 md:space-x-14 text-nowrap"> {/* Links visible on all screens */}
-            <Link to="/series" className="text-white font-light text-sm md:text-base md:ml-12  hover:text-gray-400 transition">
+          <div className="flex items-center space-x-2 md:space-x-14 text-nowrap">
+            <Link to="/series" className="text-white font-light text-sm md:text-base md:ml-12 hover:text-gray-400 transition">
               Series
             </Link>
             <Link to="/home" className="text-white font-light text-sm md:text-base hover:text-gray-400 transition">
@@ -65,25 +64,27 @@ const Navbar = () => {
         </div>
 
         {/* Avatar Dropdown */}
-        <div className="relative">
-          <button onClick={toggleDropdown} className="focus:outline-none">
+        <div className="relative md:mx-10">
+          <button onClick={toggleAvatarDropdown} className="focus:outline-none flex items-center">
             <img
-              src="src/assets/Ellipse 395.png" // Avatar image
+              src="src/assets/Ellipse 395.png" 
               alt="Profile"
-              className="w-10 h-10 mr-10 rounded-full border-2 border-white transition-transform"
+              className="w-10 h-10 rounded-full border-2 border-white transition-transform"
             />
+            <RiArrowDropDownLine size={28}/>
           </button>
-          {dropdownOpen && (
-            <div className="absolute right-0 mt-2 w-48 bg-zinc-900 text-white rounded-lg shadow-lg transition-opacity duration-200 z-50">
-              <Link to="/profile" className="text-white flex items-center px-2 py-2 hover:bg-gray-200">
+          
+          {avatarDropdownOpen && (
+            <div className="absolute right-0 mt-2 w-40 bg-zinc-900 text-white rounded-lg shadow-lg transition-opacity duration-200 z-50">
+              <Link to="/profile" className="text-white flex items-center px-4 py-2 hover:bg-gray-700">
                 <RxAvatar className="mr-2" />
-                Profil Saya
+                Profil Saya 
               </Link>
-              <Link to="/change-premium" className="text-white flex items-center px-2 py-2 mt-1 hover:bg-gray-200">
+              <Link to="/subscriptions" className="text-white flex items-center text-nowrap px-4 py-2 hover:bg-gray-700">
                 <GoStar className="mr-2" />
                 Ubah Premium
               </Link>
-              <button onClick={handleExit} className="w-full flex items-center px-2 py-2 hover:bg-zinc-700">
+              <button onClick={handleExit} className="w-full flex items-center px-4 py-2 hover:bg-gray-700 text-left">
                 <IoMdExit className="mr-2" />
                 Keluar
               </button>

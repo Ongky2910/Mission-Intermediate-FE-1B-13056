@@ -7,6 +7,8 @@ import Footer from "../components/common/Footer";
 import Popup from "../components/Popup";
 import HoverPoster from "/src/components/common/HoverPoster";
 import Rating from "/src/components/common/Rating";
+import backgroundImage from '../assets/Rectangle 9 (1).png';
+
 
 const Series = (props) => {
   const [isTrailerOpen, setIsTrailerOpen] = useState(false);
@@ -250,7 +252,7 @@ const Series = (props) => {
         },
         {
           title: "∙ Episode #1.4",
-          duration: "72 min",
+          duration: "67 min",
           description: "Karena membutuhkan ponsel, dua siswa melakukan perjalanan berisiko ke kantor guru. Byeong-chan menyampaikan informasi penting kepada Detektif Song Jae-ik.",
           trailerUrl: "https://www.youtube.com/embed/episode_trailer1",
           image: "src/assets/allofusaredeadeps4.jpg",
@@ -436,7 +438,7 @@ const Series = (props) => {
         options={options}
         onDropdownChange={handleDropdownChange}
         showDropdown={true}
-        backgroundImage="src/assets/Rectangle 9 (1).png"
+        backgroundImage={backgroundImage}
         onOpenPopup={(trailerUrl) => handleOpenPopup(trailerUrl, seriesData)} // Pass the series data
         trailerUrl="https://www.youtube.com/watch?v=your_trailer_id"
       />
