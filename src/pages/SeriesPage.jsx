@@ -9,8 +9,9 @@ import HoverPoster from "/src/components/common/HoverPoster";
 import Rating from "/src/components/common/Rating";
 import backgroundImage from '../assets/Rectangle 9 (1).png';
 
-
+// Komponen utama halaman series
 const Series = (props) => {
+  // State utk mengelola status popup trailer
   const [isTrailerOpen, setIsTrailerOpen] = useState(false);
   const [currentTrailerUrl, setCurrentTrailerUrl] = useState("");
   const [selectedSeries, setSelectedSeries] = useState(null);
@@ -19,35 +20,39 @@ const Series = (props) => {
   const [series, setSeries] = useState([]);
   const [newSeriesRating, setNewSeriesRating] = useState(0);
 
+  // Fungsi utk membuka popup trailer
   const handleOpenPopup = (trailerUrl) => {
     const autoplayUrl = trailerUrl.includes('?') ? `${trailerUrl}&autoplay=1` : `${trailerUrl}?autoplay=1`;
     setCurrentTrailerUrl(autoplayUrl);
     setSelectedSeries(series); 
     setIsTrailerOpen(true);
   };
-
+// Fungsi menutup popup
   const handleClosePopup = () => {
     setIsTrailerOpen(false);
     setCurrentTrailerUrl("");
     setSelectedSeries(null); 
   };
 
+  // Fungsi memutar trailer (unfinished)
   const handleOpenTrailer = (trailerUrl, series) => {
     const autoplayUrl = trailerUrl.includes('?') ? `${trailerUrl}&autoplay=1` : `${trailerUrl}?autoplay=1`;
     setCurrentTrailerUrl(autoplayUrl);
     setSelectedSeries(series);
     setIsTrailerOpen(true);
   };
-
+// Fungsi menutup trailer
   const handleCloseTrailer = (trailerUrl, series) => {
     setIsTrailerOpen(false);
     setCurrentTrailerUrl("");
   };
 
+// Fungsi utk mengubah genre yg dipilih
   const handleDropdownChange = (e) => {
     setSelectedGenre(e.target.value);
   };
 
+  // Fungsi untuk menangani hover pd item
   const handleMouseEnter = (item) => {
     setHoveredItemId(item.id);
   };
@@ -56,7 +61,7 @@ const Series = (props) => {
     setHoveredItemId(null);
   };
   
-
+// Daftar genre yg tersedia dlm dropdwon
   const options = [
     { value: "Aksi", label: "Aksi" },
     { value: "KDrama", label: "KDrama" },
@@ -73,6 +78,7 @@ const Series = (props) => {
     { value: "Fantasi", label: "Fantasi" },
   ];
 
+  // Data untuk seri yg sedang dilanjutkan
   const continueWatching = [
     {
       id: 1,
@@ -89,6 +95,7 @@ const Series = (props) => {
       genre: ["Thriller", "Drama", "Games"],
       cast: ["Kento Yamazaki", "Tao Tsuchiya"],
       filmmaker: "Shinsuke Sato",
+      // data episode dari "Alice in Borderland"
       episodes: [
         {
           title: "Episode 1",
@@ -148,6 +155,7 @@ const Series = (props) => {
         },  
       ],
     },
+    // Data series "Ted Lasso"
     {
       id: 2,
       title: "Ted Lasso",
@@ -212,6 +220,7 @@ const Series = (props) => {
         },
       ],
     },
+    // Data dari series "All of us are Dead"
     {
       id: 3,
       title: "All of Us are Dead",
@@ -259,6 +268,7 @@ const Series = (props) => {
         },
       ],
     },
+    
     {
       id: 4,
       title: "The Tomorrow War",
@@ -420,6 +430,7 @@ const Series = (props) => {
     },
   ];
 
+  // Menggabungkan semua kategori seri
   const allSeries = [
     ...continueWatching,
     ...topRated,
@@ -439,11 +450,11 @@ const Series = (props) => {
         onDropdownChange={handleDropdownChange}
         showDropdown={true}
         backgroundImage={backgroundImage}
-        onOpenPopup={(trailerUrl) => handleOpenPopup(trailerUrl, seriesData)} // Pass the series data
+        onOpenPopup={(trailerUrl) => handleOpenPopup(trailerUrl, seriesData)} 
         trailerUrl="https://www.youtube.com/watch?v=your_trailer_id"
       />
 
-
+{/* Menampilkan kategori untuk melanjutkan tonton series */}
       <Category
         title="Melanjutkan Tonton Series"
         items={continueWatching}
@@ -454,6 +465,7 @@ const Series = (props) => {
     
       />
      
+     {/* Menampilkan kategori untuk series persembahan chill */}
       <Category
         title="Series Persembahan Chill"
         items={topRated}
@@ -477,6 +489,7 @@ const Series = (props) => {
 
       <Footer />
 
+      {/* Menampilkan popup jika trailer dibuka */}
       {isTrailerOpen && (
         <Popup
         series={selectedSeries}
@@ -498,6 +511,7 @@ const Series = (props) => {
         />
       )}
 
+      {/* Menampilkan poster hover jika ada item yang di-hover */}
       {hoveredItemId && (
         <div className="hover-poster-container relative w-full bg-cover bg-center h-auto items-center justify-center">
           <HoverPoster

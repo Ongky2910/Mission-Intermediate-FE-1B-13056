@@ -8,6 +8,7 @@ import Popup from "../components/Popup";
 import HoverPoster from "/src/components/common/HoverPoster";
 import Rating from "/src/components/common/Rating";
 
+
 const MyList = (props) => {
   console.log("Series props:", props);
   const [isTrailerOpen, setIsTrailerOpen] = useState(false);
@@ -18,22 +19,22 @@ const MyList = (props) => {
   const [series, setSeries] = useState([]);
   const [newSeriesRating, setNewSeriesRating] = useState(0);
 
+//
   const handleOpenTrailer = (trailerUrl, series) => {
     setCurrentTrailerUrl(trailerUrl);
     setSelectedSeries(series);
-
     setIsTrailerOpen(true);
   };
-
+//
   const handleCloseTrailer = (trailerUrl, series) => {
     setIsTrailerOpen(false);
     setCurrentTrailerUrl("");
   };
-
+// Logika genre ddropdown //
   const handleDropdownChange = (e) => {
     setSelectedGenre(e.target.value);
   };
-
+// hover in 
   const handleMouseEnter = (item) => {
     setHoveredItemId(item.id);
   };
@@ -41,8 +42,9 @@ const MyList = (props) => {
   const handleMouseLeave = () => {
     setHoveredItemId(null);
   };
-  
+ //  hover out //
 
+  {/* List Genre */}
   const options = [
     { value: "Aksi", label: "Aksi" },
     { value: "KDrama", label: "KDrama" },
@@ -59,6 +61,7 @@ const MyList = (props) => {
     { value: "Fantasi", label: "Fantasi" },
   ];
 
+  {/* lanjutkan nonton */}
   const continueWatching = [
     {
       id: 1,
@@ -244,6 +247,7 @@ const MyList = (props) => {
     },
   ];
 
+  // Film Trending //
   const trendingMovies = [
     {
       id: 14,
@@ -295,6 +299,7 @@ const MyList = (props) => {
     },
   ];
 
+  // Rilis Terbaru //
   const newReleases = [
     {
       id: 20,
@@ -357,33 +362,30 @@ const MyList = (props) => {
         onOpenTrailer={handleOpenTrailer}
         handleMouseEnter={handleMouseEnter}
         handleMouseLeave={handleMouseLeave}
-        showRating={true} 
-    
+        showRating={true}   
       />
      
       <Category
         title="Film Persembahan Chill"
         items={topRated}
-        onOpenTrailer={handleOpenTrailer}
-    
+        onOpenTrailer={handleOpenTrailer}   
       />
       <Category
         title="Top Rating Film Hari Ini"
         items={topRated}
-        onOpenTrailer={handleOpenTrailer}
-      
+        onOpenTrailer={handleOpenTrailer}     
       />
+
       <Category
         title="Film Trending"
         items={trendingMovies}
-        onOpenTrailer={handleOpenTrailer}
-       
+        onOpenTrailer={handleOpenTrailer}    
       />
+
       <Category
         title="Rilis Baru"
         items={newReleases}
-        onOpenTrailer={handleOpenTrailer}
-       
+        onOpenTrailer={handleOpenTrailer}   
       />
 
       <Footer />
@@ -396,7 +398,7 @@ const MyList = (props) => {
           onClose={() => setIsTrailerOpen(false)}
         />
       )}
-
+{/* Apa yg muncul saat du hover */}
       {hoveredItemId && (
         <div className="hover-poster-container relative w-full bg-cover bg-center h-auto items-center justify-center">
           <HoverPoster

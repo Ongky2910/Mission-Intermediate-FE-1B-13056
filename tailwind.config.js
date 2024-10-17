@@ -8,7 +8,11 @@ module.exports = {
 
   theme: {
     extend: {
+<<<<<<< HEAD
       fontFamily: {
+=======
+       fontFamily: {
+>>>>>>> 5e9b1d9db68db76c93c94cd1a8b386cd473e8ba1
         londrina: ['Londrina Solid', 'sans-serif'],
       },
       colors: {
@@ -34,4 +38,8 @@ module.exports = {
       },
     },
   },
+<<<<<<< HEAD
 };
+=======
+}
+>>>>>>> 5e9b1d9db68db76c93c94cd1a8b386cd473e8ba1

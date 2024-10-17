@@ -37,10 +37,10 @@ const Button = ({
 }) => {
   const baseStyles = "w-full py-2 rounded-full transition duration-200 flex items-center justify-center";
 
-  // Use colorStyles directly to get buttonStyles
+
   const buttonStyles = clsx(
     baseStyles,
-    colorStyles[color]?.[variant] || colorStyles.gray.default, // Fallback to a default style
+    colorStyles[color]?.[variant] || colorStyles, 
     className
   );
 

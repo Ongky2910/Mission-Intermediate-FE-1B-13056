@@ -7,11 +7,8 @@ const Popup = ({ series, isOpen, onClose }) => {
   
   const [selectedEpisodeIndex, setSelectedEpisodeIndex] = useState(null);
 
-
-
   const handleEpisodeClick = (index) => {
-    setSelectedEpisodeIndex(index);
-   
+    setSelectedEpisodeIndex(index);  
   };
 
   const handleOverlayClick = (e) => {

@@ -30,7 +30,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-gray-input py-2 mx-0 overflow-hidden">
+    <nav className="bg-gray-input py-2 mx-0 overflow-hidden ">
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-4">
           {/* Logo */}

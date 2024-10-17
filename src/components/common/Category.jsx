@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import clsx from "clsx";
-import Flag from "./Flag";
-import Rating from "./Rating";
 
 const Category = ({
   title,
@@ -9,19 +7,24 @@ const Category = ({
   onOpenTrailer,
   handleMouseEnter,
   handleMouseLeave,
-  className
+  className,
 }) => {
+  {
+    /* Logika perpindahan slide */
+  }
   const [currentIndex, setCurrentIndex] = useState(0);
-  const itemsToShowDesktop = 5; 
-  const itemsToShowMobile = 1; 
+  const itemsToShowDesktop = 5;
+  const itemsToShowMobile = 1;
   const totalItems = items.length;
 
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % totalItems);
+    setCurrentIndex((prevIndex) => (prevIndex + itemsToShow) % items.length);
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + totalItems) % totalItems);
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - itemsToShow + items.length) % items.length
+    );
   };
 
   if (!items || items.length === 0) {
@@ -42,6 +45,7 @@ const Category = ({
           &lt;
         </button>
 
+        {/* Logika transisi yg lebih smooth utk better UX */}
         <div className="overflow-hidden">
           <div
             className="flex transition-transform duration-300"
@@ -70,6 +74,9 @@ const Category = ({
                   src={item.image}
                   alt={item.title}
                   className="w-full h-full rounded object-cover cursor-pointer "
+=======
+                  className="w-full h-full rounded object-cover cursor-pointer"
+>>>>>>> 5e9b1d9db68db76c93c94cd1a8b386cd473e8ba1
                 />
                 <div className="flex justify-between md:flex-none items-center">
                   <h3 className="text-white">{item.title}</h3>
@@ -80,13 +87,30 @@ const Category = ({
                   )}
                 </div>
 
+                {/*Label flag top 10, new episode & premium */}
                 <div className="absolute md:top-6 top-12 font-extralight p-11 md:right-0 right-5 ">
-                  {item.isTop10 && <Flag label="Top 10" type="top10" className="md:px-0 md:ml-4 md:py-4"/>}
+                  {item.isTop10 && (
+                    <Flag
+                      label="Top 10"
+                      type="top10"
+                      className="md:px-0 md:ml-4 md:py-4"
+                    />
+                  )}
                 </div>
 
-                {item.isPremium && <Flag label="Premium" type="premium" className="text-xl font-semibold py-4 px-4 md:text-xs md:py-1  md:px-2" />}
+                {item.isPremium && (
+                  <Flag
+                    label="Premium"
+                    type="premium"
+                    className="text-xl font-semibold py-4 px-4 md:text-xs md:py-1  md:px-2"
+                  />
+                )}
                 {item.isNewEpisode && (
-                  <Flag label="Episode Baru" type="newEpisode" className="text-xl py-3 px-4 md:text-xs md:py-1 md:px-1" />
+                  <Flag
+                    label="Episode Baru"
+                    type="newEpisode"
+                    className="text-xl py-3 px-4 md:text-xs md:py-1 md:px-1"
+                  />
                 )}
               </div>
             ))}
