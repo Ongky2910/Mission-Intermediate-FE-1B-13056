@@ -5,7 +5,6 @@ import { HiEye, HiEyeOff } from 'react-icons/hi';
 
 const InputField = ({ id, label, type, placeholder, value, onChange, className, showToggle, toggleVisibility }) => {
     return (
-
            <div className="flex-auto rounded-lg mb-5"> 
             <label className="block text-white text-sm mb-1" htmlFor={id}>
                 {label}
