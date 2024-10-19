@@ -190,7 +190,7 @@ const Payment = () => {
               <span className="text-gray-500">Paket {packageType}</span>
               <span>Rp{totalAmount.toLocaleString()}</span>
             </div>
-            <div className="flex justify-between">
+            <div className="flex justify-between"> 
               <span className="text-gray-500">Biaya Admin</span>
               <span>Rp {adminFee.toLocaleString()}</span>
             </div>
