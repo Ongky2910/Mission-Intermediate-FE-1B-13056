@@ -160,7 +160,7 @@ const Home = () => {
         items={continueWatching}
         onOpenTrailer={handleOpenTrailer}
         showRating={true}
-      />
+      /> 
 
       <Category title="Top Rating Film dan Series Hari Ini" items={topRated} />
       <Category title="Film Trending" items={trendingMovies} />
