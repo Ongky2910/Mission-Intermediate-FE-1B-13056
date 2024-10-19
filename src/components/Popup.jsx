@@ -72,7 +72,7 @@ const Popup = ({ series, isOpen, onClose }) => {
             <p className="mt-4 text-white">{series.description}</p>
           </div>
 
-         
+       
           <div className="ml-4 md:ml-8 w-full md:w-1/3">
             {/* Pemeran */}
             <div className="grid grid-cols-1 md:grid-cols-[120px_1fr]">
