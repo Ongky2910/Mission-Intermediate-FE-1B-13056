@@ -4,6 +4,7 @@ import Navbar from "../components/common/Navbar";
 import Footer from "../components/common/Footer";
 import { useSubscription } from "../components/SubscriptionContext";
 
+
 const packageDetails = {
   Individual: {
     price: 49990,
@@ -28,7 +29,7 @@ const Payment = () => {
   const location = useLocation();
   const { packageType: initialPackageType } = location.state || { packageType: "Basic" };
 
-  // State initialization
+  // Inisialisasi State 
   const [packageType, setPackageType] = useState(initialPackageType);
   const [paymentMethod, setPaymentMethod] = useState("Kartu Debit/Kredit");
   const [voucherCode, setVoucherCode] = useState("");
